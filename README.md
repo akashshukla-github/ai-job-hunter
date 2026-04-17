@@ -1,4 +1,4 @@
-# Smart Job Finder AI
+# Herald.ai
 
 > Intelligent job discovery, resume optimization, application tracking, and recruiter outreach in one AI-powered workflow.
 
