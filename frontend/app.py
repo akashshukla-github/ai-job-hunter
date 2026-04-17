@@ -883,6 +883,24 @@ def _inject_styles() -> None:
                 font-size: 3rem;
             }
         }
+            /* 🔥 Fix input text visibility */
+    input, textarea {
+        color: black !important;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #888 !important;
+    }
+
+    .stTextInput input,
+    .stTextArea textarea {
+        color: black !important;
+        background-color: #f2f2f2 !important;
+    }
+
+    .stSelectbox div {
+        color: black !important;
+}
         </style>
         """,
         unsafe_allow_html=True,
@@ -1512,8 +1530,9 @@ def main() -> None:
             if resume_text.strip() and ranked_jobs
             else None
         )
-        st.session_state.active_page = "Find Jobs"
-
+        if st.button("Find Jobs"):
+            st.session_state.active_page = "Find Jobs"
+            st.rerun()
     ranked_jobs = [_normalize_job(job) for job in st.session_state.ranked_jobs]
     profile = st.session_state.profile
     resume_analysis = st.session_state.resume_analysis
